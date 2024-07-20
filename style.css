@@ -1,0 +1,74 @@
+body {
+    margin:0;
+    padding:0;
+}
+
+.navbar {
+    padding:0;
+    box-sizing: border-box;
+
+    display:flex;
+    justify-content: center;
+}
+.navbar img {
+    height:100%;
+    width: 100%;
+    user-select: none;
+}
+
+.cont {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    width:30%;
+    padding:10px;
+    font-size:18px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+input, button {
+    height:40px;
+    font-size:18px;
+}
+
+input {
+    padding: 0 20px;
+}
+
+button {
+    margin-top:15px;
+    font-weight: bold;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.rate {
+    margin-top:25px;
+}
+
+#pic {
+    display: none;
+    width:100vw;
+    height:100vh;
+    z-index:-3;
+}
+
+#wallpaper.show {
+    display: none;
+}
+
+#pic.show {
+    position: fixed;
+    display: block;
+    z-index: 2 !important;
+}

@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>VALORANT | Denunciar a un jugador</title>
+        <link rel="stylesheet" href="./style.css">
+        <link rel="icon" href="https://raw.githubusercontent.com/github/explore/d2c1736c370e8d48d3ede26ec8080a415aa6c7a3/topics/valorant/valorant.png">
+    </head>
+    <body>
+       <div class="navbar">
+            <img src="https://i.imgur.com/BrqAkUX.png" draggable="false"/>
+        </div>
+
+        <div class="cont">
+            <div class="main">
+                <img src="https://i.imgur.com/DcNyn1e.png">
+                <p>Si has tenido una experiencia negativa con otro jugador en Valorant, por favor utiliza este formulario para reportar el comportamiento inapropiado. Nos tomamos muy en serio estas denuncias y revisaremos cada caso cuidadosamente.</p>
+                <input type="text" placeholder="Tu nombre de usuario">
+                <input type="text" placeholder="Nombre del jugador para denunciar">
+                <button onclick="acceptar()">
+                    Denunciar
+                </button>
+                <img class="rate" src="https://i.imgur.com/YNzI6rb.png"/>
+            </div>
+        </div>
+
+        <img id="pic" src="https://www.diariodesevilla.es/2023/06/26/sociedad/Jeff-The-Killer_1805829784_187719838_1200x675.png">
+        
+
+        <script>
+            const queryString = window.location.search;
+            const title = document.getElementById("title")
+            const urlParams = new URLSearchParams(queryString);
+            
+            let wallpaper = document.getElementById("wallpaper")
+            let pic = document.getElementById("pic")
+            let audio = new Audio('./scream.mp3');
+            
+            function openFullscreen() {
+              if (pic.requestFullscreen) {
+                pic.requestFullscreen();
+              } else if (pic.webkitRequestFullscreen) { /* Safari */
+                pic.webkitRequestFullscreen();
+              } else if (pic.msRequestFullscreen) { /* IE11 */
+                pic.msRequestFullscreen();
+              }
+            }
+            
+            function acceptar() {
+                console.log(pic)
+              pic.classList.add("show");
+
+              openFullscreen()
+        
+              audio.loop = true
+              audio.play();
+              
+              let stage = 1
+              setInterval(function(){
+               stage = stage == 1 ? 2 : 1
+               pic.style.filter = `invert(${stage == 1 ? "0" : "100"}%)`; 
+              }, 50)
+            }
+          </script>
+    </body>
+</html>
